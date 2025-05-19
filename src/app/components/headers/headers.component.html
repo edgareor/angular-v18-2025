@@ -1,0 +1,106 @@
+<mat-toolbar style="border: 1px solid; height: 10%;">
+    <mat-toolbar-row>
+        <button mat-button color="primary" (click)="drawer.toggle()">
+            <mat-icon aria-hidden="false">menu</mat-icon>
+        </button>
+        Project Angular V18 2025 <span>&nbsp; - E.O.</span>
+
+        <div style="flex: 1 1 auto;"></div>
+
+        <button mat-button color="primary" [matMenuTriggerFor]="menuCs">
+            <mat-icon fontSet="material-symbols-outlined">user_attributes</mat-icon>
+        </button>
+        <span style="margin-right: 20px;">Usuario</span>
+        <button mat-button color="primary" [matMenuTriggerFor]="menu">
+            <mat-icon fontSet="material-symbols-outlined">more_vert</mat-icon>
+        </button>
+        <button mat-button color="primary" (click)="toogleTheme()">
+            <mat-icon>dark_mode</mat-icon>
+        </button>
+        <button mat-fab color="primary" [ngClass]="{'classLike': flagLike}" (click)="like()">
+            <mat-icon>favorite</mat-icon>
+        </button>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #drawer mode="side" class="sidenav">
+        <mat-nav-list>
+            <mat-list-item (click)="click()">
+                <a mat-button color="primary" [routerLink]="['/login']">
+                    <mat-icon
+                        style="vertical-align: middle;">admin_panel_settings</mat-icon>Login
+                </a>
+            </mat-list-item>
+            <mat-list-item>
+                <a mat-button color="primary" [routerLink]="['/table']">
+                    <mat-icon style="vertical-align: middle;">dashboard</mat-icon>Table
+                </a>
+            </mat-list-item>
+            <mat-list-item>
+                <a mat-button color="primary" [routerLink]="['/formulario']">
+                    <mat-icon style="vertical-align: middle;">topic</mat-icon>Formulario
+                </a>
+            </mat-list-item>
+            <mat-list-item>
+                <a mat-button color="primary" [routerLink]="['/registrarse']">
+                    <mat-icon style="vertical-align: middle;">file_open</mat-icon>Registrarse
+                </a>
+            </mat-list-item>
+            <mat-list-item>
+                <a mat-button color="primary" [routerLink]="['/cargar']">
+                    <mat-icon style="vertical-align: middle;">drive_folder_upload</mat-icon>Cargar Archivos
+                </a>
+            </mat-list-item>
+            <mat-list-item>
+                <a mat-button color="primary" [routerLink]="['/testing']">
+                    <mat-icon style="vertical-align: middle;">directions_run</mat-icon>Testings
+                </a>
+            </mat-list-item>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <router-outlet />
+    </mat-sidenav-content>
+</mat-sidenav-container>
+
+<mat-menu #menu="matMenu">
+    <button mat-menu-item>
+        <a mat-button color="primary" [routerLink]="['/login']">
+            <mat-icon style="vertical-align: middle;">admin_panel_settings</mat-icon>Login
+        </a>
+    </button>
+    <button mat-menu-item>
+        <a mat-button color="primary" [routerLink]="['/table']">
+            <mat-icon style="vertical-align: middle;">dashboard</mat-icon>Table
+        </a>
+    </button>
+    <button mat-menu-item >
+        <a mat-button color="primary" [routerLink]="['/formulario']">
+            <mat-icon style="vertical-align: middle;">topic</mat-icon>Formulario
+        </a>
+    </button>
+    <button mat-menu-item>
+        <a mat-button color="primary" [routerLink]="['/registrarse']">
+            <mat-icon style="vertical-align: middle;">file_open</mat-icon>Registrarse
+        </a>
+    </button>
+    <button mat-menu-item> 
+        <a mat-button color="primary" [routerLink]="['/cargar']">
+            <mat-icon style="vertical-align: middle;">drive_folder_upload</mat-icon>Cargar Archivos
+        </a>
+    </button>
+    <button mat-menu-item>
+        <a mat-button color="primary" [routerLink]="['/testing']">
+            <mat-icon style="vertical-align: middle;">directions_run</mat-icon>Testing
+        </a>
+    </button>
+</mat-menu>
+
+<mat-menu #menuCs="matMenu">
+    <button mat-menu-item>
+        <a mat-button color="primary" [routerLink]="['/login']">
+            <mat-icon style="vertical-align: middle;">logout</mat-icon>Cerrar Sesion
+        </a>
+    </button>
+</mat-menu>

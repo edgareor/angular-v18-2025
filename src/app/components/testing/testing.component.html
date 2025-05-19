@@ -1,0 +1,18 @@
+<div style="display: flex; justify-content: space-between;">
+    <div class="box" cdkDrag>
+        Arrastrame por la página
+    </div>
+
+    <div class="boundary"> <!-- Arrastrar por el area especifica -->
+        <div class="box" cdkDrag cdkDragBoundary=".boundary">
+            Arrastrame por el area especifica
+        </div>
+    </div>
+</div>
+
+<div style="width:200px; margin: 50px auto;">
+    <qrcode [qrdata]="'https://google.com'" [width]="200" [errorCorrectionLevel]="'H'" [version]=6 
+    [colorDark]="'#00FFFF'" [colorLight]="'#000000'">
+
+    </qrcode>
+</div>

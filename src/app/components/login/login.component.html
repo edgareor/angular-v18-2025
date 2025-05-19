@@ -1,0 +1,31 @@
+<mat-card appearance="outlined" class="card">
+    <mat-card-content>Login</mat-card-content>
+</mat-card>
+<form [formGroup]="form" style="width: 250px;margin: 0 auto">
+    <mat-form-field appearance="outline">
+        <mat-label>Correo</mat-label>
+        <input type="email" matInput placeholder="a@b.com" formControlName="correo" required>
+        <mat-icon matSuffix>alternate_email</mat-icon>
+        <mat-hint>Ingresa un correo</mat-hint>
+        <mat-error>Ingresa un correo valido</mat-error>
+    </mat-form-field>
+    <br><br>
+    <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input [type]="flag ? 'password' : 'text'" matInput placeholder="******" formControlName="password" required>
+        <button mat-icon-button (click)="flag = !flag" matSuffix>
+            <mat-icon>{{flag ? 'visibility' : 'visibility_off'}}</mat-icon>
+        </button>
+        <mat-hint>Ingresa una password</mat-hint>
+        <mat-error>Password minima de 3 digitos</mat-error>
+    </mat-form-field>
+    <br><br>
+    <div style="display: flex;justify-content: center; margin-bottom: 20px;">
+        <re-captcha theme="dark" (resolved)="resolved($event)"
+            siteKey="6LerbT4rAAAAABhKGZDHpzW7eEoYdjGrmzBHlrMh"></re-captcha>
+    </div>
+    <div style="display:flex;justify-content: space-between;">
+        <button mat-flat-button [disabled]="!form.valid || !captchaValid" (click)="send();" type="submit">Ingresar</button>&nbsp;
+        <button mat-flat-button type="reset">Borrar</button>
+    </div>
+</form>

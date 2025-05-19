@@ -1,0 +1,6 @@
+.content {
+    display:flex; 				/* Establecemos la division como un container flex */
+    align-items:center; 		/* Centramos horizontalmente */
+    margin-top: 100px;
+    flex-direction: column;
+}

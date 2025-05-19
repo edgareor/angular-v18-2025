@@ -1,0 +1,37 @@
+<mat-tab-group (selectedTabChange)="change($event)" dynamicHeight>
+    <mat-tab>
+        <ng-template mat-tab-label>
+            <mat-icon fontSet="material-symbols-outlined">csv</mat-icon>&nbsp;
+            CSV
+        </ng-template>
+        <div class="content">
+            <mat-icon fontSet="material-symbols-outlined" style="margin-bottom: 20px;">csv</mat-icon>
+            <form [formGroup]="form">
+                <input type="file" #inputFileIdRec hidden formControlName="file" (change)="selectFileRec($event)">
+                <button mat-flat-button color="primary" (click)="inputFileIdRec.click()">Seleccionar archivo</button>
+            </form>
+            @if(name){
+                <div>
+                    Archivo seleccionado: <strong>{{name}}</strong>
+                </div>
+                @if(isCsv){
+                <button mat-flat-button (click)="submit()">Upload</button>
+                }
+                }
+        </div>
+    </mat-tab>
+    <mat-tab label="PDF">
+        <ng-template mat-tab-label>
+            <mat-icon fontSet="material-symbols-outlined">picture_as_pdf</mat-icon>&nbsp;
+            PDF
+        </ng-template>
+        En construccion
+    </mat-tab>
+    <mat-tab label="TXT">
+        <ng-template mat-tab-label>
+            <mat-icon fontSet="material-symbols-outlined">text_fields</mat-icon>&nbsp;
+            TXT
+        </ng-template>
+        En construccion
+    </mat-tab>
+</mat-tab-group>

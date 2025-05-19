@@ -1,0 +1,16 @@
+<div class="container" matRipple matRippleColor="cyan" [matRippleUnbounded]="true" [matRippleRadius]="50">
+    @if(flag){
+    <mat-card appearance="outlined" class="card">
+        <mat-card-content>Registrarse</mat-card-content>
+    </mat-card><br>
+    <mat-expansion-panel style="min-width: 20%;border-bottom: 1px solid orange;">
+        <mat-expansion-panel-header>
+            <mat-panel-description style="color: orange;text-align: center;"><mat-icon>info</mat-icon> Info</mat-panel-description>
+        </mat-expansion-panel-header>
+        Se solicitara Nombre y Apellido
+    </mat-expansion-panel><br>
+    <button mat-button (click)="openDialog()" style="margin: 0 auto;">Registrarse</button>
+    } @else {
+    <mat-spinner style="margin: 200px auto"></mat-spinner>
+    }
+</div>

@@ -1,0 +1,39 @@
+@use '@angular/material' as mat;
+
+$light-theme: mat.define-theme((color: (theme-type: light,
+        primary: mat.$blue-palette)));
+
+$dark-theme: mat.define-theme((color: (theme-type: dark,
+        primary: mat.$cyan-palette,
+      ),
+      typography: (
+    	  brand-family: 'Fantasy',
+    	  bold-weight: 100
+  	  ),
+      density: (scale: 0)));
+
+.dark {
+  @include mat.all-component-colors($dark-theme);
+  @include mat.all-component-densities($dark-theme);
+  @include mat.all-component-typographies($dark-theme);
+  background-color: black;
+}
+
+.light {
+  @include mat.all-component-colors($light-theme);
+  background-color: white;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.class-snackbar {
+  --mdc-snackbar-container-color: lightgreen;
+}

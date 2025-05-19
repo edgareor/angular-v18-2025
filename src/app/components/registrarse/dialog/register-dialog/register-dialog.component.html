@@ -1,0 +1,23 @@
+<h3 mat-dialog-title style="text-align: center;">Ingresa tus datos</h3>
+<mat-dialog-content style="padding: 10px;margin: 1px auto;">
+    <form cdkTrapFocus cdkTrapFocusAutoCapture [formGroup]="form">
+        <mat-form-field appearance="outline">
+            <mat-label>Nombre</mat-label>
+            <input type="text" matInput placeholder="Nombre" required cdkFocusInitial formControlName="nombre">
+            <mat-icon fontSet="material-symbols-outlined" matSuffix>person_check</mat-icon>
+            <mat-hint>Ingresa un nombre</mat-hint>
+        </mat-form-field>
+        <br><br>
+        <mat-form-field appearance="outline">
+            <mat-label>Apellido</mat-label>
+            <input type="text" matInput placeholder="Apellido" required cdkFocusInitial formControlName="apellido">
+            <mat-icon fontSet="material-symbols-outlined" matSuffix>how_to_reg</mat-icon>
+            <mat-hint>Ingresa un apellido</mat-hint>
+        </mat-form-field>
+    </form>
+</mat-dialog-content>
+<mat-dialog-actions align="center">
+    <button mat-stroked-button mat-dialog-close>No</button>
+    <button mat-button (click)="cerrarDialog()">No</button>
+    <button mat-flat-button [mat-dialog-close]="form.value" [disabled]="!form.valid">Ok</button>
+</mat-dialog-actions>

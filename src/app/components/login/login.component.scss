@@ -1,0 +1,12 @@
+.card {
+    width: 300px;
+    border: 3px solid;
+    border-radius: 10px;
+    margin: 50px auto 30px auto;
+    text-align: center;
+    font-size: 20px;
+}
+
+mat-checkbox {
+    color: var(--mdc-theme-primary);
+}
