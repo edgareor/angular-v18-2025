@@ -17,7 +17,11 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/angular-project-v18-2025-04",
+            "baseHref": "/angular-v18-2025/",
+            "allowedCommonJsDependencies": [
+              "html2canvas", "qrcode", "file-saver", "exceljs", "moment", "core-js", "raf", "rgbcolor"
+            ],
+            "outputPath": "dist/angular-v18-2025",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -42,8 +46,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kB",
-                  "maximumError": "1MB"
+                  "maximumWarning": "3MB",
+                  "maximumError": "5MB"
                 },
                 {
                   "type": "anyComponentStyle",

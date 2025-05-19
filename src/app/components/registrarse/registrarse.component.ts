@@ -3,7 +3,7 @@ import { Component, inject } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
-import { RegisterDialogComponent } from './dialog/register-dialog/register-dialog.component';
+import { RegisterDialogComponent } from './dialog/register-dialog.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import {MatSnackBar, MatSnackBarModule} from '@angular/material/snack-bar';
 import { MatRippleModule } from '@angular/material/core';
