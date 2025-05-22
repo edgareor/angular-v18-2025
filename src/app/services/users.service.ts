@@ -11,5 +11,5 @@ export class UsersService {
 
   getUser(): Observable<any> {			// El tipo de dato a retornar debe ser Observable y se recomienda sea de tipo <any>.
     return this.http.get('https://jsonplaceholder.typicode.com/todos');
-  } 
+  }
 }
